@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account &amp; Data Deletion - Speak Zeno</title>
+  <meta name="description" content="Request permanent account and personal data deletion for Speak Zeno (com.speakzeno.app).">
+  <style>
+    :root {
+      --bg-color: #0f172a;
+      --card-bg: #1e293b;
+      --panel-bg: #0b1220;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #6366f1;
+      --danger: #e11d48;
+      --success: #10b981;
+      --border-color: #334155;
+      --highlight: #38bdf8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.65;
+      padding: 24px 16px;
+    }
+
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 36px 28px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.45);
+    }
+
+    header {
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 20px;
+      margin-bottom: 28px;
+    }
+
+    .brand-badge {
+      display: inline-block;
+      background: rgba(225, 29, 72, 0.14);
+      color: #fda4af;
+      border: 1px solid rgba(225, 29, 72, 0.35);
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+
+    .meta {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-top: 28px;
+      margin-bottom: 12px;
+      border-left: 4px solid var(--accent);
+      padding-left: 10px;
+    }
+
+    p, li {
+      color: #cbd5e1;
+      font-size: 14.5px;
+      margin-bottom: 10px;
+    }
+
+    ul, ol {
+      margin-left: 22px;
+      margin-bottom: 16px;
+    }
+
+    strong {
+      color: #ffffff;
+    }
+
+    a {
+      color: var(--highlight);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .box {
+      background: var(--panel-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 18px;
+      margin: 16px 0;
+    }
+
+    .form-group {
+      margin-bottom: 14px;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #e2e8f0;
+      margin-bottom: 6px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border-color);
+      background: #0f172a;
+      color: #ffffff;
+      font-size: 14px;
+      font-family: inherit;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    button, .email-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 18px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn-danger {
+      background: var(--danger);
+      color: #ffffff;
+    }
+
+    .btn-danger:hover {
+      background: #be123c;
+    }
+
+    .email-btn {
+      background: #334155;
+      color: #f8fafc;
+    }
+
+    .email-btn:hover {
+      background: #475569;
+      text-decoration: none;
+    }
+
+    .status-msg {
+      margin-top: 14px;
+      padding: 12px 14px;
+      border-radius: 10px;
+      font-size: 13.5px;
+      display: none;
+    }
+
+    .status-msg.success {
+      display: block;
+      background: rgba(16, 185, 129, 0.14);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: #6ee7b7;
+    }
+
+    .status-msg.error {
+      display: block;
+      background: rgba(225, 29, 72, 0.14);
+      border: 1px solid rgba(225, 29, 72, 0.4);
+      color: #fda4af;
+    }
+
+    footer {
+      margin-top: 32px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border-color);
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        padding: 24px 16px;
+      }
+      h1 {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand-badge">Google Play Data Safety &amp; Deletion Portal</div>
+      <h1>Speak Zeno — Account &amp; Data Deletion</h1>
+      <div class="meta">
+        App: <strong>Speak Zeno</strong> (<code>com.speakzeno.app</code>) &bull;
+        Developer: <strong>Sushmita Nainwal</strong> &bull;
+        Contact: <a href="mailto:sushmitanainwal4@gmail.com">sushmitanainwal4@gmail.com</a>
+      </div>
+    </header>
+
+    <p>
+      Speak Zeno allows you to permanently delete your anonymous account and all associated personal records at any time — either directly inside the Android/Web app or by submitting a deletion request on this page.
+    </p>
+
+    <h2>Option 1: Delete Immediately Inside the Speak Zeno App</h2>
+    <div class="box">
+      <ol>
+        <li>Open the <strong>Speak Zeno</strong> app on your phone or browser.</li>
+        <li>Tap the <strong>Settings</strong> icon (top-right gear or Home quick menu).</li>
+        <li>Scroll down and tap <strong>Delete Account</strong>.</li>
+        <li>Tap <strong>Confirm Delete</strong> to permanently erase your profile and sign out.</li>
+      </ol>
+    </div>
+
+    <h2>Option 2: Request Account &amp; Data Deletion Online</h2>
+    <div class="box">
+      <p>
+        If you have already uninstalled Speak Zeno or cannot sign in, submit your account details below. Verified web and email deletion requests are processed within <strong>7 days</strong>.
+      </p>
+
+      <form id="deletion-form">
+        <div class="form-group">
+          <label for="alias">Anonymous Alias / Display Name *</label>
+          <input type="text" id="alias" name="alias" required placeholder="e.g., NightOwl">
+        </div>
+
+        <div class="form-group">
+          <label for="dob">Date of Birth Used on Account (YYYY-MM-DD)</label>
+          <input type="date" id="dob" name="dob">
+        </div>
+
+        <div class="form-group">
+          <label for="contactEmail">Your Contact Email (for confirmation)</label>
+          <input type="email" id="contactEmail" name="contactEmail" placeholder="you@example.com">
+        </div>
+
+        <div class="form-group">
+          <label for="reason">Additional Notes (Optional)</label>
+          <textarea id="reason" name="reason" rows="2" placeholder="Optional details to help locate your account"></textarea>
+        </div>
+
+        <div class="btn-row">
+          <button type="submit" class="btn-danger" id="submit-btn">Submit Data Deletion Request</button>
+          <a
+            class="email-btn"
+            href="mailto:sushmitanainwal4@gmail.com?subject=Speak%20Zeno%20Account%20%26%20Data%20Deletion%20Request&body=Please%20permanently%20delete%20my%20Speak%20Zeno%20account%20and%20associated%20data.%0A%0AAnonymous%20Alias%3A%20%0ADate%20of%20Birth%3A%20%0A"
+          >
+            Request via Email Instead
+          </a>
+        </div>
+
+        <div id="status-msg" class="status-msg"></div>
+      </form>
+    </div>
+
+    <h2>What Data Is Deleted vs. Never Collected</h2>
+    <ul>
+      <li><strong>Deleted Permanently:</strong> Your anonymous profile/alias, date of birth, selected talk vibe &amp; topics, region, recent caller connections, call history logs, block lists, and Web Push notification subscriptions.</li>
+      <li><strong>Never Collected or Recorded:</strong> Speak Zeno does <strong>not</strong> collect phone numbers or payment cards and does <strong>not</strong> record live voice call audio.</li>
+      <li><strong>Retention Period:</strong> In-app deletions take effect immediately. Web/email deletion requests are completed and purged from Cloud Firestore within <strong>7 days</strong>, except where limited safety/abuse moderation records must be retained to enforce bans.</li>
+    </ul>
+
+    <footer>
+      <a href="privacy-policy.html">&larr; Read Full Speak Zeno Privacy Policy</a> &bull;
+      &copy; 2026 Speak Zeno
+    </footer>
+  </div>
+
+  <script>
+    const form = document.getElementById('deletion-form');
+    const statusMsg = document.getElementById('status-msg');
+    const submitBtn = document.getElementById('submit-btn');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const alias = document.getElementById('alias').value.trim();
+      const dateOfBirth = document.getElementById('dob').value.trim();
+      const contactEmail = document.getElementById('contactEmail').value.trim();
+      const reason = document.getElementById('reason').value.trim();
+
+      if (!alias) {
+        statusMsg.className = 'status-msg error';
+        statusMsg.textContent = 'Please enter your Speak Zeno anonymous alias.';
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting...';
+      statusMsg.className = 'status-msg';
+
+      try {
+        const res = await fetch('/api/account/deletion-request', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ alias, dateOfBirth, contactEmail, reason }),
+        });
+
+        if (res.ok) {
+          const data = await res.json();
+          statusMsg.className = 'status-msg success';
+          statusMsg.innerHTML =
+            '<strong>Deletion request recorded (Ref: ' +
+            (data.requestId || 'SUBMITTED') +
+            ').</strong> Your account data and push subscriptions will be purged within 7 days.';
+          form.reset();
+        } else {
+          throw new Error('Backend unavailable on static host');
+        }
+      } catch {
+        const subject = encodeURIComponent('Speak Zeno Account & Data Deletion Request - ' + alias);
+        const body = encodeURIComponent(
+          'Please permanently delete my Speak Zeno account and all associated data.\n\n' +
+          'Anonymous Alias: ' + alias + '\n' +
+          'Date of Birth: ' + (dateOfBirth || 'Not provided') + '\n' +
+          'Contact Email: ' + (contactEmail || 'Not provided') + '\n' +
+          'Notes: ' + (reason || 'None') + '\n'
+        );
+        statusMsg.className = 'status-msg success';
+        statusMsg.innerHTML =
+          'To complete this request from a static page, please <a href="mailto:sushmitanainwal4@gmail.com?subject=' +
+          subject + '&body=' + body + '"><strong>click here to send your pre-filled deletion email</strong></a> to sushmitanainwal4@gmail.com.';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit Data Deletion Request';
+      }
+    });
+  </script>
+</body>
+</html>
